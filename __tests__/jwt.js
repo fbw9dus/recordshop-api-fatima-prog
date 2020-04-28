@@ -18,7 +18,6 @@ describe('Create Access Token', () => {
         const res = await request(app)
             .post(`/users`)
             .send(fakeUser)
-        console.log(res.body)
         const checkUser = await User.findById(res.body._id)
         expect(res.header).toEqual(
             expect.objectContaining({ 
